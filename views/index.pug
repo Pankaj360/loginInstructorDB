@@ -1,0 +1,149 @@
+//- extends layout
+
+//- block content
+//-   h1= title
+//-   p Welcome to #{title}, #{user.userinfo.name}!
+//-   form(method='POST' action='/logout')
+//-     button(type='submit') Logout
+//-     br
+    iframe(src='https://database-mongo-pankaj.herokuapp.com/' width='100%' height='600' style='border:none;')
+
+ doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  style.
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+    *{margin: 0px; padding: 0px}
+    body{
+    background:#17a2b8;
+    font-family: 'Open Sans', sans-serif;
+    }
+    form{
+     text-align: center;
+
+    }
+    h1, button{
+    color:#fff;
+    text-align: center;
+    padding: 20px;
+    }
+    p{
+    color:#fff;
+    text-align: center;
+    padding-top: 500px;
+    font-size: 10px;
+    }
+    a{
+    text-decoration:none;
+    color:#fff;
+    }
+    a:hover{
+    color:#2ecc71;
+    }
+    .main{
+    text-align: center;
+    width: 100%;
+    }
+    .sub-main{
+    width: 30%;
+    margin:22px;
+    float: left;
+    }
+    .button-one, .button-two, .button-three{
+    text-align: center;
+    cursor: pointer;
+    font-size:24px;
+    }
+    /*Button One*/
+    .button-one {
+    padding:20px 60px;
+    outline: none;
+    background-color: #27ae60;
+    border: none;
+    border-radius:5px;
+    box-shadow: 0 9px #95a5a6;
+    }
+    .button-one:hover{
+    background-color: #2ecc71;
+    }
+    .button-one:active {
+    background-color: #2ecc71;
+    box-shadow: 0 5px #95a5a6;
+    transform: translateY(4px);
+    }
+    /*Button Two*/
+    .button-two {
+    border-radius: 4px;
+    background-color:#d35400;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    }
+    .button-two span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+    .button-two span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    }
+    .button-two:hover span {
+    padding-right: 25px;
+    }
+    .button-two:hover span:after {
+    opacity: 1;
+    right: 0;
+    }
+    /*Button Three*/
+    .button-three {
+    position: relative;
+    background-color: #f39c12;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    }
+    .button-three:hover{
+    background:#fff;
+    box-shadow:0px 2px 10px 5px #97B1BF;
+    color:#000;
+    }
+    .button-three:after {
+    content: "";
+    background: #f1c40f;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+    }
+    .button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+    }
+    
+h1 Welcome to #{title}, #{user.userinfo.name}!
+.main
+form(method='POST' action='/logout')
+  button.button-two(onclick="window.location.href='/logout';")
+    span Logout
+.main
+    iframe(src='https://database-mongo-pankaj.herokuapp.com/' width='90%' height='600' style='border:none;')
